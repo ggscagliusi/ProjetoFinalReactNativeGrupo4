@@ -9,12 +9,12 @@ export const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     borderRadius:5,
-    backgroundColor: '#e5e5e5'
+    backgroundColor: "rgba(226, 226, 226, 0.3)",
   },
   title: {
     fontSize: 18,
     fontWeight: "bold",
-    color: "#50009b",
+    color: "#15719f",
     margin: 3,
     textAlign: "center"
   },

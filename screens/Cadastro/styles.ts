@@ -11,8 +11,8 @@ export const styles = StyleSheet.create({
     fontSize: 36,
     fontWeight: "bold",
     color: "#15719f",
+    textAlign:"center",
     margin: 10,
-    alignSelf: "center"
   },
   formInput: {
     borderColor: "#15719f",
@@ -31,16 +31,6 @@ export const styles = StyleSheet.create({
     borderRadius: 10,
     alignItems: "center",
   },
-
-  formButtonDisabled: {
-    backgroundColor: "#62a1c7",
-    width: 300,
-    margin: 10,
-    padding: 10,
-    borderRadius: 10,
-    alignItems: "center",
-  },
-
   textButton: {
     color: "white",
     fontSize: 20,
@@ -48,8 +38,7 @@ export const styles = StyleSheet.create({
   },
   SubContainer: {
     flexDirection: "row",
-    width: 300,
-    alignContent:"center"
+    width: "80%",
   },
   subButton: {
     padding: 10,

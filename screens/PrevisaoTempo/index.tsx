@@ -39,7 +39,7 @@ export default function PrevisaoTempo() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.formTitle}>Previsão do Tempo</Text>
+      {/* <Text style={styles.formTitle}>Previsão do Tempo</Text> */}
       <View>
         <TextInput
           style={styles.formInput}
@@ -60,7 +60,7 @@ export default function PrevisaoTempo() {
       </View>
       {loading && ( // bloco do Activity Indicator
         <View>
-          <ActivityIndicator size={"large"} color={"#50009b"} />
+          <ActivityIndicator size={"large"} color={"#15719f"} />
         </View>
       )}
 

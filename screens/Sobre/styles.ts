@@ -3,7 +3,7 @@ import { StyleSheet } from "react-native";
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#ffffff",
+    backgroundColor: "#95d6ea",
     alignItems: "center",
     justifyContent: "center",
   },
@@ -11,11 +11,11 @@ export const styles = StyleSheet.create({
   formTitle: {
     fontSize: 28,
     fontWeight: "bold",
-    color: "#50009b",
+    color: "#15719f",
     margin: 10,
   },
     formButton: {
-    backgroundColor: "#50009b",
+    backgroundColor: "#15719f",
     width: 300,
     margin: 10,
     padding: 10,
@@ -30,7 +30,7 @@ export const styles = StyleSheet.create({
   },
 
   subTextButton: {
-    color: "#50009b",
+    color: "#15719f",
     fontWeight: "bold",
   },
 });

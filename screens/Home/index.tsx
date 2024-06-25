@@ -1,12 +1,16 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { View, Text, Image } from "react-native";
 import { Botao } from "../../components/Botao";
 import { styles } from "./style";
 
 const Home = ({ navigation }) => {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Bem-vindo ao nosso App!</Text>
+      <Image
+        style={styles.imagemLogo}
+        source={require("../../assets/logoWeatherMini.png")}
+      />
+      {/* <Text style={styles.title}>Bem-vindo ao nosso App!</Text> */}
       <View style={styles.buttonContainer}>
         <Botao
           style={styles.formButton}

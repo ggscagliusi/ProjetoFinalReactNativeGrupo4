@@ -5,7 +5,7 @@ export const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#fff",
+    backgroundColor: "#95d6ea",
   },
   title: {
     fontSize: 24,
@@ -13,19 +13,28 @@ export const styles = StyleSheet.create({
   },
   buttonContainer: {
     width: "80%",
-    flexDirection: "row",
-    justifyContent: "space-around",
-  },
+    flexDirection: "column",
+    alignItems: "center",
+ },
   formButton: {
-    backgroundColor: "#50009b",
+    backgroundColor: "#15719f",
     width: 150,
     padding: 10,
     borderRadius: 10,
     alignItems: "center",
+    marginTop:10,
   },
   textButton: {
     color: "white",
     fontSize: 18,
     fontWeight: "bold",
   },
+
+  imagemLogo:{
+    width:300,
+    height:300,
+    marginBottom: 10,
+  }
+
+
 });
