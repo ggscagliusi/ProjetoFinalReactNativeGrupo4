@@ -6,16 +6,21 @@ import { useState } from "react";
 import { auth } from "../../src/firebase.config";
 import { signInWithEmailAndPassword } from "firebase/auth";
 
+function cadastro(){
+
+}
+
 export default function Login() {
   const [userMail, setUserMail] = useState("");
   const [userPass, setUserPass] = useState("");
+
+
 
   function userlogin() {
     signInWithEmailAndPassword(auth, userMail, userPass)
       .then((userCredential) => {
         const user = userCredential.user;
         alert("Login Efetuado com sucesso!");
-
         console.log(user);
       })
       .catch((error) => {
@@ -52,7 +57,7 @@ export default function Login() {
       </Pressable>
       <View style={styles.SubContainer}>
         <Pressable style={styles.subButton}>
-          <Text style={styles.subTextButton}>Cadastre-se</Text>
+          <Text style={styles.subTextButton} onPress={cadastro}>Cadastre-se</Text>
         </Pressable>
       </View>
       <StatusBar style="auto" />
