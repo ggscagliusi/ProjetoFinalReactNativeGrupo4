@@ -12,7 +12,7 @@ const Home = ({ navigation }) => {
         />
         <Button
           title="Cadastro"
-          onPress={() => alert('Em breve disponível')}
+          onPress={() => navigation.navigate('Cadastro')}
         />
       </View>
     </View>
