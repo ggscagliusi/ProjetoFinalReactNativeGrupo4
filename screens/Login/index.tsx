@@ -7,9 +7,7 @@ import { auth } from "../../src/firebase.config";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { useNavigation } from "@react-navigation/native";
 
-function cadastro(){
-
-}
+function cadastro() {}
 
 export default function Login() {
   const navigation = useNavigation();
@@ -17,21 +15,19 @@ export default function Login() {
   const [userMail, setUserMail] = useState("");
   const [userPass, setUserPass] = useState("");
 
-
-
   function userlogin() {
     signInWithEmailAndPassword(auth, userMail, userPass)
       .then((userCredential) => {
         const user = userCredential.user;
         alert("Login Efetuado com sucesso!");
         console.log(user);
-        navigation.navigate('Perfil')
+        navigation.navigate("Perfil");
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
         alert(errorMessage);
-        navigation.replace("Login")
+        navigation.replace("Login");
       });
   }
 
@@ -61,8 +57,11 @@ export default function Login() {
         <Text style={styles.textButton}>Logar</Text>
       </Pressable>
       <View style={styles.SubContainer}>
-        <Pressable style={styles.subButton}>
-          <Text style={styles.subTextButton} onPress={cadastro}>Cadastre-se</Text>
+        <Pressable
+          style={styles.subButton}
+          onPress={() => navigation.navigate("Cadastro")}
+        >
+          <Text style={styles.subTextButton}>Cadastre-se</Text>
         </Pressable>
       </View>
       <StatusBar style="auto" />
