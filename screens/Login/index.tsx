@@ -25,7 +25,7 @@ export default function Login() {
         const user = userCredential.user;
         alert("Login Efetuado com sucesso!");
         console.log(user);
-        navigation.replace("DrawerScreens")
+        navigation.navigate('Perfil')
       })
       .catch((error) => {
         const errorCode = error.code;

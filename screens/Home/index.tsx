@@ -1,40 +1,28 @@
-import React from 'react';
-import { View, Text, StyleSheet, Button } from 'react-native';
+import React from "react";
+import { View, Text } from "react-native";
+import { Botao } from "../../components/Botao";
+import { styles } from "./style";
 
 const Home = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Bem-vindo ao nosso App!</Text>
       <View style={styles.buttonContainer}>
-        <Button
-          title="Login"
-          onPress={() => navigation.navigate('Login')}
+        <Botao
+          style={styles.formButton}
+          onPress={() => navigation.navigate("Login")}
+          text="Login"
+          textStyle={styles.textButton}
         />
-        <Button
-          title="Cadastro"
-          onPress={() => navigation.navigate('Cadastro')}
+        <Botao
+          style={styles.formButton}
+          onPress={() => navigation.navigate("Cadastro")}
+          text="Cadastro"
+          textStyle={styles.textButton}
         />
       </View>
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#fff',
-  },
-  title: {
-    fontSize: 24,
-    marginBottom: 30,
-  },
-  buttonContainer: {
-    width: '80%',
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-  },
-});
 
 export default Home;
