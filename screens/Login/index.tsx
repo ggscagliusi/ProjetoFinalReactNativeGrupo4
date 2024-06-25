@@ -5,12 +5,15 @@ import { styles } from "./styles";
 import { useState } from "react";
 import { auth } from "../../src/firebase.config";
 import { signInWithEmailAndPassword } from "firebase/auth";
+import { useNavigation } from "@react-navigation/native";
 
 function cadastro(){
 
 }
 
 export default function Login() {
+  const navigation = useNavigation();
+
   const [userMail, setUserMail] = useState("");
   const [userPass, setUserPass] = useState("");
 
@@ -22,11 +25,13 @@ export default function Login() {
         const user = userCredential.user;
         alert("Login Efetuado com sucesso!");
         console.log(user);
+        navigation.replace("Home")
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
         alert(errorMessage);
+        navigation.replace("Login")
       });
   }
 
