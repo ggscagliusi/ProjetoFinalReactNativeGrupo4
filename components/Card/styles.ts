@@ -22,6 +22,7 @@ export const styles = StyleSheet.create({
   informacao:{
     fontSize:16,
     fontWeight:"bold",
+    textAlign:"center"
   }
   
 });

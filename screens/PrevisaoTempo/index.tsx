@@ -4,6 +4,7 @@ import {
   TextInput,
   Pressable,
   ActivityIndicator,
+  Modal,
 } from "react-native";
 import React from "react";
 import { styles } from "./styles";
@@ -18,19 +19,21 @@ export default function PrevisaoTempo() {
   const [loading, setloading] = useState(false);
   const [showData, setShowData] = useState(false);
   const [input, setInput] = useState("");
+  const [erro, setErro] = useState("");
   const [data, setData] = useState([]);
 
   async function fetchDataHandler() {
     console.log("acionado");
     setloading(true);
     setShowData(false);
+    setErro(null);
     try {
       const weatherData = await fetchWeatherData(input);
       console.log(weatherData);
       setData(weatherData);
       setShowData(true);
     } catch (e) {
-      alert(e.message);
+      setErro(e.message);
     } finally {
       setloading(false);
       setInput("");
@@ -61,6 +64,12 @@ export default function PrevisaoTempo() {
       {loading && ( // bloco do Activity Indicator
         <View>
           <ActivityIndicator size={"large"} color={"#15719f"} />
+        </View>
+      )}
+
+      {erro && (
+        <View style={styles.SubContainer}>
+          <Card titulo={"Erro na Requisição"} informacao={erro} />
         </View>
       )}
 
