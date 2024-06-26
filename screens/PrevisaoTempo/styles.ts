@@ -19,7 +19,7 @@ export const styles = StyleSheet.create({
     borderRadius: 10,
     borderWidth: 1,
     fontSize: 22,
-    width: 300,
+    width: 270,
     padding: 10,
     margin: 10,
   },
@@ -58,4 +58,14 @@ export const styles = StyleSheet.create({
     color: "#15719f",
     fontWeight: "bold",
   },
+
+  botaoGps: {
+    backgroundColor: "#fff",
+    width: 30,
+    margin: 3,
+    borderRadius: 5,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+
 });

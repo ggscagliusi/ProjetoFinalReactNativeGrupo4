@@ -6,7 +6,8 @@ import {
   ActivityIndicator,
   Modal,
   PermissionsAndroid,
-  Platform
+  Platform,
+  TouchableOpacity,
 } from "react-native";
 import React from "react";
 import { styles } from "./styles";
@@ -15,8 +16,9 @@ import { Card } from "../../components/Card";
 import { CardCeu } from "../../components/CardCeu";
 import { CardTemp } from "../../components/CardTemp";
 import { Botao } from "../../components/Botao";
-import { fetchWeatherData } from "../../services/OpenWeatherApi";
-import Local from 'react-native-geolocation-service';
+import { buscarPorCord, fetchWeatherData } from "../../services/OpenWeatherApi";
+import Local from "react-native-geolocation-service";
+import Icons from "@expo/vector-icons/Ionicons";
 
 export default function PrevisaoTempo() {
   const [loading, setloading] = useState(false);
@@ -61,7 +63,7 @@ export default function PrevisaoTempo() {
     }
   }
   async function obterLoc() {
-    if (Platform.OS === 'android') {
+    if (Platform.OS === "android") {
       try {
         const permLoc = await PermissionsAndroid.request(
           PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION,
@@ -70,7 +72,7 @@ export default function PrevisaoTempo() {
             message: "Este aplicativo precisa acessar sua localização",
             buttonNeutral: "Perguntar Depois",
             buttonNegative: "Cancelar",
-            buttonPositive: "OK"
+            buttonPositive: "OK",
           }
         );
         if (permLoc === PermissionsAndroid.RESULTS.GRANTED) {
@@ -81,7 +83,7 @@ export default function PrevisaoTempo() {
               fetchDataHandlerCord();
             },
             (erro) => {
-              alert('Erro: ' + erro);
+              alert("Erro: " + erro);
             },
             { enableHighAccuracy: true, timeout: 15000, maximumAge: 10000 }
           );
@@ -99,7 +101,7 @@ export default function PrevisaoTempo() {
           fetchDataHandlerCord();
         },
         (erro) => {
-          alert('Erro: ' + erro);
+          alert("Erro: " + erro);
         },
         { enableHighAccuracy: true, timeout: 15000, maximumAge: 10000 }
       );
@@ -109,13 +111,21 @@ export default function PrevisaoTempo() {
   return (
     <View style={styles.container}>
       {/* <Text style={styles.formTitle}>Previsão do Tempo</Text> */}
-      <View>
+      <View style={styles.SubContainer}>
         <TextInput
           style={styles.formInput}
           placeholder="Digite uma Cidade..."
           value={input}
           onChangeText={(e) => setInput(e)}
         />
+        <TouchableOpacity
+          style={styles.botaoGps}
+          onPress={fetchDataHandlerCord}
+        >
+          <Icons name="locate-outline" size={20} color={"#00000"} />
+        </TouchableOpacity>
+      </View>
+      <View style={styles.SubContainer}>
         <Botao
           style={[
             styles.formButton,
