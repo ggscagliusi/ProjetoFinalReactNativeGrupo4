@@ -78,11 +78,11 @@ export function Sobre() {
     },
     {
     name: "Lucas Voigt",
-    img: "",
-    number: "📞: (24) ",
-    email: "✉️: ",
-    github: "",
-    instagram: "",
+    img: "https://avatars.githubusercontent.com/u/87502643?v=4",
+    number: "📞: (24) 9 8817-5064",
+    email: "✉️: lucasvoigt67@gmail.com",
+    github: "https://github.com/Voigtuwu",
+    instagram: "https://www.instagram.com/lucasvooigt/",
   },
     {
       name: "Marcos Mattos",
